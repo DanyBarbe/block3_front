@@ -4,7 +4,7 @@ include 'form-button.php';
 include 'bdd_connect.php';
 
 global $bdd;
-$id = 2;
+$id = 1;
 
 $appartement_all = $bdd->query('select * from appartement');
 

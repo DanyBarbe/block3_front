@@ -526,6 +526,7 @@ main {
 .article-selected .appartement-container .appartement-data .data-container .data-folder div {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .article-selected .appartement-container .appartement-data .data-container .data-content {
   display: flex;

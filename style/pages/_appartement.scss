@@ -146,6 +146,7 @@ main {
 
           div {
             @include display(column, none, none);
+            width: 100%;
           }
         }
 
