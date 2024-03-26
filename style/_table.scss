@@ -1,0 +1,100 @@
+
+#appartement-table {
+  .table-content {
+    .ligne-content {
+      .th, .td {
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            @if $i ==2 or $i==3 {
+              width: 20%;
+            } @else {
+              width: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#proprietaire-table {
+  .table-content {
+    .ligne-content {
+      .th, .td {
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            @if ($i ==3) {
+              width: 20%;
+            } @else if ($i == 4) {
+              width: 25%;
+            } @else if ($i == 5) {
+              width: 15%;
+            } @else {
+              width: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#locataire-table {
+  .table-content {
+    .ligne-content {
+      .th, .td {
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            @if ($i<=2 or $i==7) {
+              width: 10%;
+            } @else if ($i==3 or $i==4) {
+              width: 20%;
+            } @else if ($i==6 or $i==8) {
+              width: 5%;
+            } @else {
+              width: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#contrat-table {
+  .table-content {
+    .ligne-content {
+      .th, .td {
+        width: 20%;
+      }
+    }
+  }
+}
+
+#etat-table{
+  .table-content {
+    .ligne-content {
+      .th,.td{
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            @if ($i ==1 or $i==4) {
+              width: 40%;
+            } @else if ($i==3) {
+              width: 20%;
+            } @else {
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#paiement-table{
+  .table-content {
+    .th,.td{
+      width:25%;
+    }
+  }
+}

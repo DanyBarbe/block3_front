@@ -1,0 +1,167 @@
+@import "reset";
+@import "variable";
+@import "mixin";
+
+body {
+  background: $light;
+  color: $dark;
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: xx-large;
+}
+
+header {
+  @include display(row,space-around,center);
+}
+
+input,textarea{
+  @include border(1px,solid,$dark,5px);
+  padding: .2rem;
+}
+
+button{
+  cursor:pointer;
+}
+
+fieldset {
+  @include border(2px,solid,$dark,10px);
+  position: relative;
+  padding: .5rem 0;
+  legend {
+    text-align: center;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-radius: 10px;
+    padding: .5rem;
+  }
+  form{
+    @include display(column,none,center);
+    gap: 1rem;
+    .important {
+      label {
+        &.required {
+          &:after {
+            content: '*';
+            color: red;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .message-required {
+      font-weight: bold;
+
+      .red {
+        color: red;
+      }
+    }
+
+    .button-content {
+      width: 75%;
+    }
+  }
+}
+
+
+.btn {
+  @include display(row,none,center);
+  @include border(1px,solid,$dark,10px);
+  cursor: pointer;
+  gap: .5rem;
+  padding: .5rem;
+  transition: all ease .5s;
+  .icon-content {
+    @include square(1.5rem);
+    svg {
+      @include square(100%);
+    }
+  }
+
+  &:hover{
+    border-color: $light;
+  }
+}
+
+.btn-close{
+  @include square(1.5rem);
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  &:hover{
+    .icon-content{
+      svg{
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .icon-content{
+    @include square(1.5rem);
+    svg{
+      transform: rotate(0);
+      transition: all ease .5s;
+    }
+  }
+}
+
+.btn-add {
+  @include button($valid,.5,$dark);
+  &.active {
+    @include button($valid,1,$light);
+  }
+}
+
+.btn-update{
+  @include button($cancel,.5,$dark);
+  &.active {
+    @include button($cancel,1,$light);
+  }
+}
+
+.btn-delete{
+  @include button($delete,.5,$dark);
+  &.active {
+    @include button($delete,1,$light);
+  }
+}
+
+.btn-submit{
+  @include button($valid,1,$light);
+}
+
+.btn-cancel{
+  @include button($cancel,1,$light);
+}
+
+
+.button-content {
+  display: flex;
+  @include display(row,space-around,center);
+}
+
+.page-header {
+  margin-bottom: .5rem;
+}
+
+.form-delete{
+  @include center;
+  width: 90%;
+  &.hidden {
+    @include hidden;
+  }
+  .warning{
+    font-family: "Bungee Spice", cursive;
+    font-size:x-large;
+  }
+  .message{
+    width: 95%;
+    text-align: center;
+  }
+}
+
+//import page
+@import 'navbar';
+@import 'pages/appartement';
+@import 'table';

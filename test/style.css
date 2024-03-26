@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+article.left {
+  background: red;
+  width: 100%;
+}
+article.left section div {
+  border: 1px solid black;
+}
+
+fieldset {
+  width: 50%;
+  height: 50%;
+}
+fieldset.hidden {
+  width: 0;
+  height: 0;
+  transform: scale(0);
+}
+fieldset legend {
+  text-align: center;
+  font-size: xx-large;
+  padding: 0 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
